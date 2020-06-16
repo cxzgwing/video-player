@@ -39,7 +39,3 @@ maven-assembly-plugin打包工具（包含所有依赖，simple-video-player2-1.
 13、播放列表显示按钮（list）：显示播放列表（可换行显示，半透明效果），当窗口移动时、窗口最大化时、窗口还原时自动隐藏播放列表，播放列表文件排序规则为视频文件名字符串排序（该顺序同时也是播放顺序）
 
 14、视频播放进度条：可随窗口自适应宽度（当窗口调整大小时，疑似重绘进度条跟不上，会有进度条与窗口宽度不一致的情况，目前暂未解决）
-
-## 预览
-
-https://github.com/cxzgwing/simple-video-player2/blob/master/preview/01.png
