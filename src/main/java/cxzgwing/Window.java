@@ -886,7 +886,7 @@ public class Window extends JFrame {
     }
 
     /**
-     * 设置默认焦点为播放暂停俺奶奶
+     * 设置默认焦点为播放暂停按钮
      */
     private void setPauseButtonAsDefaultFocus() {
         pauseButton.requestFocus();
