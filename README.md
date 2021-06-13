@@ -1,9 +1,22 @@
 # simple-video-player2
 
-## 说明
-vlc资源在https://github.com/cxzgwing/vlc-simple-video-player2
+Java简易视频播放器 升级版本
 
-效果图参见preview文件夹
+原版本见https://github.com/cxzgwing/simple-video-player
+
+## 说明
+vlc资源（zip压缩包）在https://github.com/cxzgwing/vlc-simple-video-player2
+
+vlc目录包含plugins文件夹、libvlc.dll文件、libvlccore.dll文件
+
+解压后放至simple-video-player2目录下，vlc目录与src目录平级
+
+vlc官网：https://www.videolan.org/vlc/
+
+**另**也可使用原版本中的vlc资源
+
+## 效果图
+![03](https://user-images.githubusercontent.com/41880446/121799729-4286f680-cc60-11eb-9217-faef317768ad.png)
 
 ## 项目与工具
 maven(maven-archetype-quickstart)、java-1.8、vlc-3.8.0、log4j-2.13.3
