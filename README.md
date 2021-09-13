@@ -1,5 +1,7 @@
 # simple-video-player2
 
+![image](https://img.shields.io/github/license/cxzgwing/simple-video-player2?style=flat-square)
+
 Java简易视频播放器 升级版本
 
 原版本见https://github.com/cxzgwing/simple-video-player
