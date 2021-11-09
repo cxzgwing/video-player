@@ -1,4 +1,4 @@
-# simple-video-player2
+# video-player
 
 ![image](https://img.shields.io/github/license/cxzgwing/simple-video-player2?style=flat-square)
 
