@@ -7,7 +7,7 @@ Java简易视频播放器 升级版本
 原版本见https://github.com/cxzgwing/simple-video-player
 
 ## 说明
-vlc资源（zip压缩包）在https://github.com/cxzgwing/simple-video-player2-vlc
+vlc资源（zip压缩包）在https://github.com/cxzgwing/video-player-vlc
 
 vlc目录包含plugins文件夹、libvlc.dll文件、libvlccore.dll文件
 
