@@ -10,6 +10,10 @@ import java.util.Objects;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
+import org.apache.commons.lang3.StringUtils;
+
+import cxzgwing.dll.DLL;
+import cxzgwing.utils.Constants;
 import cxzgwing.utils.FileUtils;
 import cxzgwing.utils.NumberUtil;
 import uk.co.caprica.vlcj.component.EmbeddedMediaPlayerComponent;
@@ -59,7 +63,7 @@ public class Window extends JFrame {
     // 音量显示标签
     private Label volumeLabel;
     // 文件对话框
-    private FileDialog fileDialog;
+    // private FileDialog fileDialog;
     // 播放文件列表按钮
     private Button listButton;
     // 播放文件列表窗口
@@ -150,8 +154,8 @@ public class Window extends JFrame {
 
         // 选择文件按钮
         Button chooseButton = new Button("choose");
-        fileDialog = new FileDialog(this);
-        fileDialog.setMultipleMode(true);
+        // fileDialog = new FileDialog(this);
+        // fileDialog.setMultipleMode(true);
         chooseButton.setFocusable(false);
         chooseButton.addMouseListener(mouseClickedChooseFiles());
         buttonPanel.add(chooseButton);
@@ -441,8 +445,13 @@ public class Window extends JFrame {
         return new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                fileDialog.setVisible(true);
-                File[] files = fileDialog.getFiles();
+                // fileDialog.setVisible(true);
+                // File[] files = fileDialog.getFiles();
+                // 文件选择框：通过使用jna调用C++生成的dll来实现
+                java.util.List<File> files = getChooseFiles();
+                if (files.isEmpty()) {
+                    return;
+                }
                 videos.clear();
                 listContent.setText("");
                 for (File file : files) {
@@ -469,6 +478,23 @@ public class Window extends JFrame {
                 preLoading();
             }
         };
+    }
+
+    private java.util.List<File> getChooseFiles() {
+        System.setProperty(Constants.JNA_ENCODING, Constants.GBK);
+        String filesPath = DLL.dll.chooseFiles();
+        java.util.List<File> list = new ArrayList<>();
+        if (StringUtils.isBlank(filesPath) || Constants.FILE_SEPARATOR.equals(filesPath)) {
+            return list;
+        }
+        String[] strings = filesPath.split("\\*\\*\\*");
+        for (String str : strings) {
+            if (StringUtils.isBlank(str) || Constants.FILE_SEPARATOR.equals(filesPath)) {
+                continue;
+            }
+            list.add(new File(str));
+        }
+        return list;
     }
 
     /**
