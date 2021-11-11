@@ -11,7 +11,7 @@ vlc资源（zip压缩包）在https://github.com/cxzgwing/video-player-vlc
 
 vlc目录包含plugins文件夹、libvlc.dll文件、libvlccore.dll文件
 
-解压后放至simple-video-player2目录下，vlc目录与src目录平级
+解压后放至video-player目录下，vlc目录与src目录平级
 
 vlc官网：https://www.videolan.org/vlc/
 
@@ -23,7 +23,7 @@ vlc官网：https://www.videolan.org/vlc/
 ## 项目与工具
 maven(maven-archetype-quickstart)、java-1.8、vlc-3.8.0、log4j-2.13.3
 
-maven-assembly-plugin打包工具（包含所有依赖，simple-video-player2-1.0-SNAPSHOT-jar-with-dependencies.jar需从target目录复制到项目根目录simple-video-player2下才可使用，目前的问题：jar包只能播放英文名的视频文件）
+maven-assembly-plugin打包工具（包含所有依赖，simple-video-player2-1.0-SNAPSHOT-jar-with-dependencies.jar需从target目录复制到项目根目录video-player下才可使用，目前的问题：jar包只能播放英文名的视频文件）
 
 ## 功能说明
 
